@@ -1,28 +1,24 @@
 #!/usr/bin/python3
-"""
-User class
-"""
 
-class User():
-    """ Documentation """
-
-    def __init__(self):
-        """ Documentation """
-        self.__email = None
-
-    @property
-    def email(self):
-        """ Documentation """
-        return self.__email
-
-    @email.setter
-    def email(self, value):
-        """ Documentation """
-        if type(value) is not str:
-            raise TypeError("email must be a string")
-        self.__email = value
+class Square:
     
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
+
+    def area_of_my_square(self):
+        """Calculate the area of the square"""
+        return self.width * self.width
+
+    def PerimeterOfMySquare(self):
+        """Calculate the perimeter of the square"""
+        return (self.width * 2) + (self.height * 2)
+
+    def __str__(self):
+        return "{}/{}".format(self.width, self.height)
+
 if __name__ == "__main__":
-    u = User()
-    u.email = "john@snow.com"
-    print(u.email)
+    s = Square(width=12, height=9)
+    print(s)
+    print(s.area_of_my_square())
+    print(s.PerimeterOfMySquare())
